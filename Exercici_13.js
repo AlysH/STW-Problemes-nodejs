@@ -1,12 +1,12 @@
-o2 = (function () {
-    let count = 1;
-    let notify = null;
+var o2 = (function () {
+    this.count = 1;
+    this.notify = null;
 
-    function setNotify (f) {
+    this.setNotify = function (f) {
         notify = f
     };
 
-    function increment () {
+    this.increment = function () {
         count++;
 
         if ((notify !== null) && (notify instanceof Function)) {
@@ -14,8 +14,13 @@ o2 = (function () {
         }
     }
 
+    this.getCount = function () {
+        return count;
+    };
+
     return {
         inc: increment,
+        count: getCount,
         setNotify: setNotify
     }
 })();
