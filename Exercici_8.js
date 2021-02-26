@@ -1,29 +1,21 @@
 const fs = require('fs');
 
 let f6 = function (llista, callback_final) {
-    let fileContents = [];
+    let resultat = [];
 
-    let readFiles = new Promise((resolve, reject) => {
-        llista.forEach((element, index, array) => fs.readFile('./' + element, 'utf8', (err, data) => {
-            if (err) {
-                throw err;
-            }
+    llista.forEach((element, index, array) => fs.readFile('./' + element, 'utf8', (err, data) => {
+        if (err) {
+            throw err;
+        }
 
-            fileContents.push(data);
+        resultat.push(data);
 
-            if (index === (array.length - 1)) {
-                resolve();
-            }
-        }));
-    });
-
-    readFiles.then(() => {
-        callback_final(fileContents);
-    });
+        if (resultat.length === llista.length) {
+            callback_final(resultat);
+        }
+    }));
 };
 
 let llista_arxius = ['a1.txt','a2.txt'];
 
-f6(llista_arxius, function (res) {
-    console.log(res);
-});
+f6(llista_arxius, function (res) {console.log(res);});
