@@ -1,4 +1,4 @@
-let o = class  {
+let o = class {
     constructor() {
         this.count = 0;
         this.notify = null;

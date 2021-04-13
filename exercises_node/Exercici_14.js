@@ -1,4 +1,4 @@
-function Counter() {
+function Counter () {
     this.a = 1;
     this.inc = function () {
         this.a++;
@@ -9,13 +9,10 @@ function Counter() {
     };
     this.count = function () { return this.a };
     this.notify = null;
-
 }
 
 let o3 = new Counter();
 
-o3.notify = function (a) {
-    console.log(a);
-}
+o3.notify = console.log;
 
 o3.inc();
