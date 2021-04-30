@@ -8,5 +8,7 @@ let antipromise = function (promise) {
     });
 };
 
-antipromise(Promise.reject(0)).then((x) => { console.log("Antipromise resolved, x = " + x) });
-antipromise(Promise.resolve(1)).catch((x) => { console.log("Antipromise rejected, x = " + x) });
+antipromise(Promise.reject(0))
+    .then((x) =>{ console.log("Antipromise resolved, x = " + x) });
+antipromise(Promise.resolve(1))
+    .catch((x) => { console.log("Antipromise rejected, x = " + x) });
