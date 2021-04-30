@@ -1,0 +1,8 @@
+Podría i segurament hauría problmes al utilitzar una variables de tipus
+'var' com a comptador modificant-la adins del for each perque és una
+variable global a nivell de fils d'execusió. Si es modifica en un fil
+o thread, es modifica per tots els altres. En canvi, utilitzant la
+variable index proveïda per la funció 'forEach', interna de JavaScript,
+la condició de carrera[1] no es dona.
+
+[1] Condición de carrera — https://es.wikipedia.org/wiki/Condici%C3%B3n_de_carrera
