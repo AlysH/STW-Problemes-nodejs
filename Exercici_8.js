@@ -3,7 +3,8 @@ const fs = require('fs');
 let f6 = function (llista, callback_final) {
     let resultat = [];
 
-    llista.forEach((element) => fs.readFile('./' + element, 'utf8', (err, data) => {
+    llista.forEach((element) =>
+        fs.readFile('./' + element, 'utf8', (err, data) => {
         if (err) {
             throw err;
         }
