@@ -1,6 +1,7 @@
 let promiseToCallback = function (f) {
     return (function (x, callback) {
-        f(x).then((res) => callback(null, res), (res) => callback(res, null));
+        f(x).then((res) => callback(null, res), (res) =>
+            callback(res, null));
     });
 };
 
