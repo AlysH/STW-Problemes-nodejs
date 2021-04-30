@@ -17,7 +17,7 @@ p.then((x) => { console.log("a: " + x) });
 /**
  * Apartat 'b'
  *
- * La promesa 'p' es rebutja amb x = 0
+ * La promesa 'p' es rebutja amb x = 0;
  * Al primer 'then' tenim que, com s'ha rebutjat la promesa, ens el saltem i anem al 'catch'.
  * Al 'catch' tenim que ens arriba 'x' amb valor 0 i fem:
  * x = x + 2 = 2
