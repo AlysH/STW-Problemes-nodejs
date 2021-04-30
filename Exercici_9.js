@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-let f6 = function (llista, callback_final) {
+let f7 = function (llista, callback_final) {
     let resultat = [];
 
     llista.forEach((element, index, array) =>
@@ -19,4 +19,4 @@ let f6 = function (llista, callback_final) {
 
 let llista_arxius = ['a1.txt','a2.txt'];
 
-f6(llista_arxius, function (res) {console.log(res);});
+f7(llista_arxius, function (res) {console.log(res);});
