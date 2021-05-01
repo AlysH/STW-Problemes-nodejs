@@ -1,20 +1,18 @@
 let promiseBarrier = function(x) {
     let list = [];
     let counter = 0;
-    let params = [];
     let executedFunctions = [];
 
     for (let i = 0; i < x; i++) {
         list[i] = function (n) {
+            counter++;
 
             return new Promise((resolve) => {
-                counter++;
                 executedFunctions[i] = resolve;
-                params[i] = n;
 
                 if (counter === x) {
                     for(let j = 0; j < x; j++) {
-                        executedFunctions[j](params[j]);
+                        executedFunctions[j](n);
                     }
                 }
             });
